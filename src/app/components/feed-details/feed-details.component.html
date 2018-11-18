@@ -1,0 +1,18 @@
+<mat-card class="mat-elevation-z8 card col-xs-3" >
+  <mat-card-header>
+    <div mat-card-avatar class="header-image">
+      <img src="{{feed?.media?.m}}">
+    </div>
+    <mat-card-title class="ellipses">{{getTitle(feed.author)}}</mat-card-title>
+    <mat-card-subtitle>{{feed.date_taken | date}}</mat-card-subtitle>
+  </mat-card-header>
+<img mat-card-image src="{{feed?.media?.m}}">
+  <mat-card-content>
+      <!--<div [innerHTML]="feed.description"></div>-->
+      {{feed.title}}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

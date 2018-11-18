@@ -1,0 +1,22 @@
+.card {
+  max-width: 400px;
+}
+
+.header-image {
+  background-size: cover;
+  img {
+    border-radius: 50%;
+    height: 40px;
+    width: 60px;
+  }
+}
+
+.ellipses {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+mat-card{
+  border-radius: 15px;
+}

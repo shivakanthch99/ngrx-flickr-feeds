@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Search feeds by tags</mat-card-title>
+    <mat-card-content>
+        <form>
+            <!-- Search Field -->
+             <mat-form-field>
+                <input matInput placeholder="Search" type="string" [formControl]="search" required>
+                <mat-error *ngIf="search.invalid">{{validateSearchInput}}</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+<ng-masonry-grid
+            [masonryOptions]="{ transitionDuration: '0.5s', gutter: 5 }" 
+            [useAnimation]="false"
+            [useImagesLoaded]="true"
+            (onNgMasonryInit)="onNgMasonryInit($event)">
+<!-- Masonry Grid Item -->
+<ng-masonry-grid-item id="{{'masonry-item-' + i}}" *ngFor="let item of result; let i = index"> 
+<!-- Grid Content  -->
+    <feed-details [feed]="item"></feed-details>
+</ng-masonry-grid-item>
+</ng-masonry-grid>
